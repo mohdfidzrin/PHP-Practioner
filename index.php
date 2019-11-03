@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 $names = [
     'Sulong' => 'Rin',
     'Tengah' => 'Fidzrin',
@@ -8,7 +10,7 @@ $names = [
 ];
 
 $names['baru'] = 'Rein';
-
+dd('Tammat');
 var_dump($names);
 
 require 'index.view.php';
