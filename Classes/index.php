@@ -1,13 +1,29 @@
 <?php
 
-class Task {
-    protected $description;
+class Tasks {
+    public $description;
 
-    protected $completed = false;
+    public $completed = false;
 
     public function  __construct($description)
     {
         // Automatically triggered on instantiation
+        $this->description = $description;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
         $this->description = $description;
     }
 
@@ -30,9 +46,11 @@ class Task {
 }
 
 $tasks = [
-    new Task('Go to the store'),
-    new Task('Fnish my screencast'),
-    new Task('Clean up')
+    new Tasks('Go to the store'),
+    new Tasks('Fnish my screencast'),
+    new Tasks('Clean up')
 ];
+
+$tasks[0]->setCompleted(true);
 
 require 'index.view.php';
