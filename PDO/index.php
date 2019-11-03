@@ -4,8 +4,6 @@ require '../Classes/TaskRepo.php';
 
 $taskRepo = new TaskRepo();
 
-$pdo = $taskRepo->connectDb();
-
-$tasks = $taskRepo->fetchAllTasks($pdo);
+$tasks = $taskRepo->fetchAllTasks('todos');
 
 require 'index.view.php';
